@@ -1,6 +1,17 @@
 const defaults = { isActive: true, timezone: 'Asia/Jakarta', dateFormat: 'default' };
 
+// Terjemahkan semua elemen dengan atribut data-i18n
+function applyI18n() {
+  document.querySelectorAll('[data-i18n]').forEach(el => {
+    const key = el.dataset.i18n;
+    const text = chrome.i18n.getMessage(key);
+    if (text) el.textContent = text;
+  });
+}
+
 document.addEventListener('DOMContentLoaded', () => {
+  applyI18n();
+
   chrome.storage.local.get(defaults, (items) => {
     document.getElementById('isActive').checked = items.isActive;
     document.getElementById('timezone').value = items.timezone;
@@ -16,10 +27,9 @@ document.addEventListener('DOMContentLoaded', () => {
     
     chrome.storage.local.set(settings, () => {
       const status = document.getElementById('status');
-      status.textContent = 'Tersimpan!';
+      status.textContent = chrome.i18n.getMessage('saved');
       setTimeout(() => { status.textContent = ''; }, 1500);
       
-      // Kirim pesan ke tab aktif untuk update real-time
       chrome.tabs.query({ active: true, currentWindow: true }, (tabs) => {
         if (tabs[0]?.id) chrome.tabs.sendMessage(tabs[0].id, { action: 'settingsUpdated', settings });
       });

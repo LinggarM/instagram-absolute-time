@@ -1,0 +1,15 @@
+{
+  "extName": { "message": "Instagram Absolute Time" },
+  "extDescription": { "message": "Ubah waktu relatif Instagram (mis. '23j' atau '5m') menjadi tanggal dan waktu absolut (WIB/Asia-Jakarta). Ditambahkan di setiap postingan Instagram." },
+  "toggleActive": { "message": "Aktifkan Ekstensi" },
+  "timezoneLabel": { "message": "Zona Waktu" },
+  "dateFormatLabel": { "message": "Format Tanggal" },
+  "tzWib": { "message": "WIB (Asia/Jakarta)" },
+  "tzWita": { "message": "WITA (Asia/Makassar)" },
+  "tzWit": { "message": "WIT (Asia/Jayapura)" },
+  "tzLocal": { "message": "Lokal Browser" },
+  "formatDefault": { "message": "Default (16 Nov 2026, 12.18)" },
+  "formatIso": { "message": "ISO (2026-11-16 12:18)" },
+  "formatShort": { "message": "Pendek (16/11/2026)" },
+  "saved": { "message": "Tersimpan!" }
+}

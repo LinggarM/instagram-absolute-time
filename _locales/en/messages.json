@@ -1,0 +1,15 @@
+{
+  "extName": { "message": "Instagram Absolute Time" },
+  "extDescription": { "message": "Convert Instagram's relative time (e.g., '23h' or '5m') to absolute date and time. Added to every Instagram post." },
+  "toggleActive": { "message": "Enable Extension" },
+  "timezoneLabel": { "message": "Timezone" },
+  "dateFormatLabel": { "message": "Date Format" },
+  "tzWib": { "message": "WIB (Asia/Jakarta)" },
+  "tzWita": { "message": "WITA (Asia/Makassar)" },
+  "tzWit": { "message": "WIT (Asia/Jayapura)" },
+  "tzLocal": { "message": "Browser Local" },
+  "formatDefault": { "message": "Default (Nov 16, 2026, 12:18)" },
+  "formatIso": { "message": "ISO (2026-11-16 12:18)" },
+  "formatShort": { "message": "Short (11/16/2026)" },
+  "saved": { "message": "Saved!" }
+}
