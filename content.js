@@ -9,10 +9,7 @@ function updateInstagramTimestamps() {
         const isoString = el.getAttribute('datetime');
         if (!isoString) return;
 
-        // 3. Simpan teks asli (misal: "377w" atau "23 hours ago")
-        const originalText = el.textContent.trim();
-
-        // 4. Parse string ISO (2019-08-16T12:18:04.000Z) menjadi objek Date JavaScript
+        // 3. Parse string ISO (2019-08-16T12:18:04.000Z) menjadi objek Date JavaScript
         const date = new Date(isoString);
 
         // Cek apakah tanggal valid
@@ -28,19 +25,15 @@ function updateInstagramTimestamps() {
             timeZone: 'Asia/Jakarta' // Dipaksa ke WIB
         });
 
-        // 6. Ganti teks di layar
-        el.textContent = formattedDate;
+        // 6. Tampilkan tanggal terformat tanpa mengubah waktu asli
+        const formattedElement = document.createElement('span');
+        formattedElement.textContent = ` · ${formattedDate}`;
+        formattedElement.style.color = '#0095f6';
+        formattedElement.style.fontWeight = '500';
+        el.appendChild(formattedElement);
 
-        // 7. Beri tooltip (muncul saat kursor diarahkan ke teks waktu)
-        el.title = `Waktu asli: ${originalText}\nWaktu server (UTC): ${isoString}`;
-
-        // 8. Tandai elemen ini sudah diproses agar tidak diubah berulang kali
+        // 7. Tandai elemen ini sudah diproses agar tidak diubah berulang kali
         el.dataset.replaced = 'true';
-
-        // 9. (Opsional) Beri warna biru khas Instagram agar Anda tahu ini sudah diubah
-        el.style.color = '#0095f6';
-        el.style.fontWeight = '500';
-        el.style.cursor = 'help'; // Mengubah kursor jadi tanda tanya saat di-hover
     });
 }
 
