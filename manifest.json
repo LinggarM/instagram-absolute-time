@@ -2,7 +2,7 @@
   "manifest_version": 3,
   "name": "Instagram Absolute Time",
   "version": "1.1",
-  "description": "Mengubah waktu relatif (377w, 23h) menjadi tanggal & waktu asli postingan Instagram.",
+  "description": "Ubah waktu relatif Instagram (mis. '23j' atau '5m') menjadi tanggal dan waktu absolut (WIB/Asia-Jakarta). Ditambahkan di setiap postingan Instagram.",
   "content_scripts": [
     {
       "matches": ["*://*.instagram.com/*"],
